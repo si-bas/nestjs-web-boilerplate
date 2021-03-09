@@ -1,0 +1,35 @@
+doctype html
+html.no-focus(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=0")
+    title #{appName}
+    meta(name="robots", content="noindex, nofollow")
+    meta(property="og:type", content="website")
+    meta(property="og:url", content=baseUrl())
+    meta(property="og:image", content="")
+
+    base(href=baseUrl())
+
+    link(rel="shortcut icon", href=baseUrl('favicon.ico'))
+    block links
+    link#css-main(rel="stylesheet", href=baseUrl('assets/css/codebase.min.css'))
+    block styles
+  body
+    #page-container.main-content-boxed
+      main#main-container
+        block content
+    script(src=baseUrl('assets/js/core/jquery.min.js'))
+    script(src=baseUrl('assets/js/core/bootstrap.bundle.min.js'))
+    script(src=baseUrl('assets/js/core/jquery.slimscroll.min.js'))
+    script(src=baseUrl('assets/js/core/jquery.scrollLock.min.js'))
+    script(src=baseUrl('assets/js/core/jquery.appear.min.js'))
+    script(src=baseUrl('assets/js/core/jquery.countTo.min.js'))
+    script(src=baseUrl('assets/js/core/js.cookie.min.js'))
+    script(src=baseUrl('assets/js/codebase.js'))
+
+    script(src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js")
+    
+    script(src=baseUrl('js/app.js'))
+    block scripts

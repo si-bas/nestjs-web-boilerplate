@@ -1,0 +1,39 @@
+extends ../layouts/auth.pug 
+
+block content
+  .bg-body-dark.bg-pattern(style="background-image: url('"+baseUrl('assets/img/various/bg-pattern-inverse.png')+"');")
+    .row.mx-0.justify-content-center
+      .hero-static.col-lg-6.col-xl-4
+        .content.content-full.overflow-hidden
+          .py-30.text-center
+            a.font-w700(href=baseUrl())
+              //- img.img-fluid.options-item(src="images/logo.png", alt="Logo")
+            h1.h4.font-w700.mt-30.mb-10 Kota Surakarta
+            h2.h5.font-w400.text-muted.mb-0 Dashboard Pengaudan via WhatsApp dan SMS
+          form.js-validation-signin(action=baseUrl('auth/login'), method="post", id="form-login")
+            .block.block-themed.block-rounded.block-shadow
+              .block-header.bg-gd-dusk
+                h3.block-title Login
+                .block-options
+                  button.btn-block-option(type="button")
+                    i.si.si-wrench
+              .block-content
+                .form-group                  
+                    label(for="login-username") Username
+                    input#login-username.form-control.required(type="text", name="username")
+                    
+                .form-group
+                    label(for="login-password") Kata Sandi
+                    input#login-password.form-control.required(type="password", name="password")
+                .form-group.row.mb-0
+                  .col-sm-6.d-sm-flex.align-items-center.push
+                    .custom-control.custom-checkbox.mr-auto.ml-0.mb-0
+                      input#login-remember-me.custom-control-input(type="checkbox", name="rememberMe")
+                      label.custom-control-label(for="login-remember-me") Ingat Saya
+                  .col-sm-6.text-sm-right.push
+                    button.btn.btn-alt-primary(type="submit")
+                      i.si.si-login.mr-10
+                      |  Masuk
+
+append scripts
+  script(src=baseUrl('js/pages/auth-login.js'))
